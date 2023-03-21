@@ -1,0 +1,530 @@
+html, body {
+  height: 100% !important;
+}
+
+.fix-height {
+  height: 100vh !important;
+}
+
+body {
+  background: #fef2f2;
+  /* min-height: 100vh; */
+    display: flex;
+    flex-direction: column;
+   min-height: 100%;
+   height:auto;
+    overflow:scroll;
+}
+body.sidenav-bg {
+  bottom: 0;
+  left: 0;
+  position: fixed !important;
+  right: 0;
+  top: 0;
+  overflow: hidden !important;
+}
+footer{
+  margin-top: auto;
+  /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+  position:relative;
+}
+#page-container {
+  position: relative;
+}
+.footer-content-align{
+  justify-content: space-between;
+}
+
+@media (min-width: 260px) and (max-width: 430px) {
+  .game-card {
+    background: #ff9191;
+    height: 190px;
+    width: 140px;
+  }
+  .game-card img {
+    height: 160px;
+    /* width:150px; */
+  }
+  }
+
+  @media (min-width: 430px) {
+.game-card {
+  background: #ff9191;
+  height: 240px;
+  width: 190px;
+}
+
+.game-card img {
+  /* height: 200px; */
+  /* width:150px; */
+}
+  }
+
+  @media (min-width: 430px) and (max-width:640px){
+.game-card img {
+    height: 210px;
+    /* width: 150px; */
+}
+  }
+  @media (min-width: 640px){
+    .game-card img {
+        height: 200px;
+        /* width: 150px; */
+    }
+      }
+
+  @media (min-width: 430px) {
+.star-div {
+  width: 190px;
+}
+  }
+
+.react-multi-carousel-item {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  width: 230px !important;
+}
+
+/* #mySidenav a {
+  position: absolute;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#home {
+  top: 20px;
+  background-color: #dc2626;
+}
+
+#favourite {
+  top: 80px;
+  background-color: #dc2626;
+}
+
+#settings {
+  top: 140px;
+  background-color: #dc2626;
+}
+
+#logout {
+  top: 200px;
+  background-color: #dc2626
+} */
+
+/* @media (min-width: 260px) and (max-width: 767px) */
+@media (min-width: 260px) and (max-width: 639px){
+.sidenav-bg{
+  position: fixed;
+  top: 0;
+  /* top:-70px; */
+  overflow: scroll; 
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  /* background-color: #00000066; */
+  background-color:#141212b8;
+  display: flex;
+  z-index: 99999 !important;
+}
+}
+
+#mySidenav a {
+  background-color: #dc2626;
+  position: absolute;
+  font-size: 22px;
+  text-decoration: none;
+  Color: white;
+  padding: 15px 15px 15px 0px;
+  border-radius: 0px 5px 5px 0px;
+  left: -70px;
+  transition: 0.3s;
+  width: 120px;
+  /* opacity: 0.5; */
+}
+
+/* Hover effect on sidebar */
+#mySidenav a:hover {
+  left: 0px;
+  opacity: 1;
+  background-color: #dc2626;
+}
+
+/* float icons*/
+#mySidenav a {
+  float: right;
+}
+
+/* defining position of each nav bar */
+#home {
+  /* top: 20px; */
+  top:50px;
+  /* width: 210px;
+  height: 30px; */
+}
+
+#favourite {
+  /* top: 80px; */
+  top:100px;
+  /* width: 210px;
+  height: 30px; */
+}
+
+#settings {
+  /* top: 140px; */
+  /* top:120px; */
+  /* width: 210px;
+  height: 30px; */
+}
+
+#logout {
+  /* top: 60px; */
+  /* top: 140px; */
+  top:150px;
+  /* width: 210px;
+  height: 30px; */
+}
+
+/* login-page */
+.logo-height {
+  height: -webkit-fill-available !important;
+}
+
+.login-page {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 260px) and (max-width: 640px) {
+.login-logo-icon{
+  width:120px !important;
+}
+}
+@media (min-width: 280px) and (max-width: 1023px) {
+  .signup-background {
+    /* width: 100%; */
+    /* height:100% !important; */
+    background-image: url("../../src/images/gamelogin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding-top:5rem;
+    padding-bottom:5rem; */
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup-background {
+    /* width: 100%; */
+    /* height:100% !important; */
+    background-image: url("../../src/images/gamelogin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* padding-top:5rem;
+  padding-bottom:5rem; */
+  }
+}
+
+.logo-bg {
+  /* width: 100%; */
+  /* height:100% !important; */
+  background-image: url("../../src/images/logo-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* game display in game page */
+
+.unity-div {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  position:relative;
+  display: flex;
+  justify-content: center;
+  /* padding-top: 5px;
+   padding-bottom: 10px; */
+}
+
+@media (min-width: 641px) {
+  .unity-container {
+    /* position: absolute; */
+    position:relative;
+    background: transparent;
+    width: 83vw;
+    /* width: 100vw; */
+    /* height:100%; */
+    /* overflow-y: auto; */
+  }
+}
+
+
+@media (min-width: 280px) and (max-width: 640px) {
+  .unity-container {
+    /* position: absolute; */
+    position:relative;
+    background: transparent;
+    /* width:83vw; */
+    width: 100vw;
+    /* height:100%; */
+    overflow-y: auto;
+  }
+}
+
+#unity-canvas {
+  background: #FFFFFF;
+  height: 85vh !important;
+  width: 100vw !important;
+}
+
+.unity-container canvas {
+  height: 85vh !important;
+  width: 100vw !important;
+}
+
+@media (min-width: 1024px) {
+  .align {
+    padding: 0 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-align {
+    padding: 0 8rem;
+  }
+}
+
+@media (min-width: 1279px) {
+  .login-align {
+    padding: 0 12rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+  .login-align {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1280px) {
+  .login-align {
+    padding: 0 5rem;
+  }
+}
+
+/* Mobile view bar icon */
+@media (min-width: 260px) and (max-width: 639px){
+.bar-icon::before {
+  content: "\f0c9";
+  font-size: 25px;
+  font-family: FontAwesome;
+  color: black;
+  margin-top:10px;
+  z-index:9999999;
+  /* position:absolute; */
+  position:fixed !important;
+}
+
+
+.bar-icon.close-icon::before {
+  /* content: "\2612" !important; */
+  content:"\2716" !important;
+  font-size: 25px;
+  font-family: FontAwesome;
+  color:#fff;
+  /* color: #000; */
+  margin-top:10px;
+  z-index:9999999;
+  position:fixed;
+  /* position:absolute; */
+}
+}
+/* close navbar */
+.ul-close {
+  /* top:25px !important; */
+  /* top: 10px; */
+  display: flex !important;
+  opacity: 100 !important;
+  z-index: 0px;
+}
+
+.ul-open {
+  opacity: 0;
+  top: 0;
+  /* display:none; */
+  display: flex;
+}
+
+
+@media (min-width: 641px) and (max-width: 766px) {
+
+  .closebtn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none !important;
+
+  }
+}
+
+@media (min-width: 641px) and (max-width: 766px) {
+
+  .closebtn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: none !important;
+
+  }
+}
+
+/* Accordion */
+
+.accordion-item {
+  /* border: 1px solid rgba(0,0,0,.125); */
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item>div {
+  height: auto;
+}
+
+.accordion-item .accordion-header {
+  color: #dc2626;
+  float: left;
+  text-align: left;
+  text-align: left;
+
+}
+
+.accordion-item .accordion-collapse {
+
+
+  transition: height 0.2s ease 0s;
+  overflow-x: hidden !important;
+  /* height:auto !important; */
+}
+
+.accordion-item .accordion-body {
+
+
+  transition: height 0.2s ease 0s;
+  overflow-x: hidden !important;
+  padding: 5px 5px;
+  text-align: left;
+}
+
+.accordion-item .accordion-header .accordion-button {
+  color: #dc2626;
+  float: left;
+  text-align: left;
+
+  text-align: left;
+  border-bottom: 2px solid #dc2626;
+
+}
+
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  /* padding: 1rem 1.25rem; */
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow-anchor: none;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out, border-radius .15s ease;
+}
+
+.accordion-button::after {
+  /* flex-shrink: 0; */
+  /* width: 1.25rem;
+        height: 1rem; */
+  /* margin-left: auto;
+        margin-top:auto;
+        content: "\f107"; */
+  /* background-image:  url('../../src/images/downarrow.png'); */
+  /* background-repeat: no-repeat;
+        background-size: 0.75rem; */
+  /* transition: transform .2s ease-in-out; */
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: ' \f107';
+  font-family: FontAwesome;
+}
+
+.accordion-button:not(.collapsed)::after {
+  /* background-image:  url('../../src/images/uparrow.png');
+        transform: rotate(360deg); */
+  content: "\f106";
+  font-family: FontAwesome;
+}
+
+/*seach icons */
+.serchwrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+}
+
+.icnstyle {
+  position: absolute;
+  margin-left: 1.2rem;
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
+  color: white;
+}
+      iframe{
+        height:80vh;
+        width:83vw;
+      }
+
+.serchwrap input {
+  padding-left: 3rem;
+}
+
+      /* scroll */
+      .scroll{
+        height:100px;
+        overflow:auto;
+        display: block;
+        }
+        
+        .scroll::-webkit-scrollbar{
+            width:5px;
+            /* background-color:#000; */
+            }
+            
+        .scroll::-webkit-scrollbar-thumb{
+          background:gray;
+          border-radius:5px;
+        }
