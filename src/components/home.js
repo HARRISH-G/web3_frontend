@@ -90,7 +90,7 @@ const Home = () => {
     try {
       await axios({
         method: "get",
-        url: "https://web3games-api.kryptofam.com/favorite_games",
+        url: "https://web3games-api.kryptofam.com/users/favorite_games",
         headers: {
           Authorization: `Bearer ${userdata.token}`,
         },
@@ -485,7 +485,7 @@ const Home = () => {
                               <div>
                                 <img
                                   src={
-                                    "https://web3games-api.kryptofam.com" +
+                                    "https://web3games-api.kryptofam.com" +"/public"+
                                     details.thumbnail
                                   }
                                   height="200px"
@@ -623,7 +623,7 @@ const Home = () => {
                             <div>
                               <img
                                 src={
-                                  "https://web3games-api.kryptofam.com" +
+                                  "https://web3games-api.kryptofam.com" + "/public" +
                                   details.thumbnail
                                 }
                                 height="200px"

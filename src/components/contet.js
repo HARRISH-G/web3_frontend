@@ -96,7 +96,7 @@ const Content = () => {
       };
       await axios({
         method: "post",
-        url: "https://web3games-api.kryptofam.com/update_favorite_game",
+        url: "https://web3games-api.kryptofam.com/users/update_favorite_game",
         headers: {
           Authorization: `Bearer ${userdata.token}`,
         },

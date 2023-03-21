@@ -136,7 +136,7 @@ const Login = () => {
               {/* <img src={gamelogin} height="200" width="200" className="mx-auto" alt="" />  */}
 
               <div className="text-1xl text-red-500  mt-2 font-bold self-center mb-5">
-                WELCOME TO WEBGL GAMES
+                WELCOME TO WEB3 GAMES
               </div>
               <div>
                 <span className="after:content-[''] after:ml-0.5 text-justify text-red-700 red text-xs font-medium text-red text-left">
