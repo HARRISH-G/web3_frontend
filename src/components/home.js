@@ -528,7 +528,7 @@ const Home = () => {
                               <div>
                                 <img
                                   src={
-                                    "https://web3games-api.kryptofam.com" +
+                                    "https://web3games-api.kryptofam.com" + "/public" +
                                     details.data.thumbnail
                                   }
                                   height="200px"
