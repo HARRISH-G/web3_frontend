@@ -3,8 +3,9 @@ import bbicon from "../images/bbicon.png";
 
 const Footer = () => {
     return (
-<footer id="footer" className="mt-10" style={{ height: "5.5rem" }}>
-<section className="relative bg-red-100  footer-align">
+<footer id="footer" className="mt-10" >
+{/* style={{ height: "5.5rem" }} */}
+<section className="relative bg-red-100 bottom-0 footer-align">
   <div className=" px-2 sm:px-2 md:px-2 xl:px-0 flex xl:flex-row md:flex-row sm:flex-row flex-col self-center text-center justify-between py-4 relative mx-auto container">
   {/* flex-wrap */}
     {/* <div className="flex flex-col self-center align-middle"> */}

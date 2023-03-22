@@ -308,7 +308,7 @@ const Home = () => {
               <div className="lg:w-full text-left mt-5 sm:mt-5 md:mt-5 xl:mt-0">
                 <div className="flex justify-between flex-row xl:flex-row md:flex-row sm:flex-row ">
                   <div className="flex self-center m-2 align-middle">
-                    <img className="" height="120" width="120" src={bbglogo} />
+                    <img className="" height="150" width="150" src={bbglogo} />
                   </div>
                   <div className="serchwrap sm:hidden hidden md:flex xl:flex">
                     {(sorteddata && sorteddata.results) ||
@@ -394,7 +394,8 @@ const Home = () => {
           <div className=" flex flex-col">
             {/* mr-10 */}
             <div>
-              <span className="xl:text-3xl md:text-2xl sm:text-2xl text-xl border-b-4 border-red-500 mb-10 float-left text-left font-bold border-b-600">
+              <span className="xl:text-3xl md:text-2xl sm:text-2xl text-xl border-b-4 border-red-500 mb-10 
+              float-left text-left font-bold border-b-600">
                 GAMES
               </span>
             </div>
@@ -419,7 +420,7 @@ const Home = () => {
             itemClass="carousel-item-padding-20-px "
           > */}
             <div
-              className="flex flex-wrap justify-start"
+              className="flex flex-wrap justify-center sm:justify-start md:justify-start xl:justify-start"
               //     xl:justify-between grid grid-cols-1  gap-4  sm:grid sm:grid-cols-3
               //  my-3 sm:gap-5 md:grid md:grid-cols-4 md:gap-7 xl:grid xl:grid-cols-6 xl:gap-7 mx-4 sm:mx-0 xl:mx-0
             >
@@ -494,7 +495,7 @@ const Home = () => {
                                   onClick={(e) => getGameId(details._id)}
                                 />
 
-                                <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white uppercase font-semibold float-left justify-start  text-left">
+                                <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                   {details.name}
                                 </span>
                               </div>
@@ -516,7 +517,7 @@ const Home = () => {
                             details.data.name.split(" ").join("_")
                           }
                         >
-                          <div className="bg-red-600 z-10 relative rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
+                          <div className="bg-red-600 z-10 relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
@@ -537,7 +538,7 @@ const Home = () => {
                                   onClick={(e) => getGameId(details.data._id)}
                                 />
 
-                                <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white uppercase font-semibold float-left justify-start  text-left">
+                                <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                   {details.data.name}
                                 </span>
                               </div>
@@ -563,7 +564,7 @@ const Home = () => {
             </div>
 
             <div
-              className="flex flex-wrap justify-start"
+              className="flex flex-wrap justify-center sm:justify-start md:justify-start xl:justify-start"
               //     xl:justify-between grid grid-cols-1  gap-4  sm:grid sm:grid-cols-3
               //  my-3 sm:gap-5 md:grid md:grid-cols-4 md:gap-7 xl:grid xl:grid-cols-6 xl:gap-7 mx-4 sm:mx-0 xl:mx-0
             >
