@@ -29,7 +29,6 @@ const AppRoutes = () => {
     sessionStorage.setItem("token", "");
     navigate("/login");
     dispatch(UserSignOut());
-    sessionStorage.clear();
   };
 
   useEffect(() => {
@@ -55,7 +54,6 @@ const AppRoutes = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="*" element={<Login />}></Route>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         {!(userdata.token === "" || ValidateToken() === false) ? (

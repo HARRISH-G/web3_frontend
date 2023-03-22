@@ -23,6 +23,7 @@ import axios from "axios";
 import { GAMEID } from "../actiontypes/Types";
 import { ValidateToken } from "./tokenvalidator/TokenValidate";
 import UserSignOut from "../actions/UserSignout";
+import fileDownload from "js-file-download";
 
 const Home = () => {
   const [allGames, setallGames] = useState([]);
@@ -37,6 +38,16 @@ const Home = () => {
   });
 
   let navigate = useNavigate();
+
+  const downloadFile = (url, filename) => {
+    axios
+      .get(" https://web3games-api.kryptofam.com" + url, {
+        responseType: "blob",
+      })
+      .then((res) => {
+        fileDownload(res.data, url);
+      });
+  };
 
   let token = sessionStorage.getItem("token");
   sessionStorage.setItem("gameId", "");
@@ -394,8 +405,10 @@ const Home = () => {
           <div className=" flex flex-col">
             {/* mr-10 */}
             <div>
-              <span className="xl:text-3xl md:text-2xl sm:text-2xl text-xl border-b-4 border-red-500 mb-10 
-              float-left text-left font-bold border-b-600">
+              <span
+                className="xl:text-3xl md:text-2xl sm:text-2xl text-xl border-b-4 border-red-500 mb-10 
+              float-left text-left font-bold border-b-600"
+              >
                 GAMES
               </span>
             </div>
@@ -468,40 +481,66 @@ const Home = () => {
                   allGames.map((details, index) => {
                     console.log("game list", details);
                     return (
-                      <div className="star-div m-2">
-                        <NavLink
-                          to={
-                            "/game/" + "?" + details.name.split(" ").join("_")
-                          }
-                        >
-                          <div className="bg-red-600 z-10 relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
+                      <div className="star-div m-2 " key={details._id}>
+                        <div className="bg-red-600 z-10 text-white font-bold relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
+                          {/* <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
-                            <i className="fa fa-star text-white text-xs"></i>
-                            <i className="fa fa-star text-white text-xs"></i>
-                          </div>
-                          <div className="game-card z-40 rounded-xl">
-                            <div className="flex flex-col -mt-3 xl:p-4 md:p-4 sm:p-4 p-2 w-full self-center text-center mx-auto">
-                              <div>
-                                <img
-                                  src={
-                                    "https://web3games-api.kryptofam.com" +"/public"+
-                                    details.thumbnail
+                            <i className="fa fa-star text-white text-xs"></i> */}
+                          {details.type}
+                        </div>
+                        <div className="game-card z-40 rounded-xl">
+                          <div className="flex flex-col -mt-3 xl:p-4 md:p-4 sm:p-4 p-2 w-full self-center text-center mx-auto">
+                            <div>
+                              {details.type === "download" ? (
+                                <>
+                                  <a
+                                    href={
+                                      "https://web3games-api.kryptofam.com" +
+                                      details.url
+                                    }
+                                  >
+                                    <img
+                                      src={
+                                        "https://web3games-api.kryptofam.com" +
+                                        "/public" +
+                                        details.thumbnail
+                                      }
+                                      height="200px"
+                                      className="rounded-lg self-center cursor-pointer"
+                                      alt=""
+                                    />
+                                  </a>
+                                </>
+                              ) : (
+                                <NavLink
+                                  to={
+                                    "/game/" +
+                                    "?" +
+                                    details?.name?.split(" ").join("_")
                                   }
-                                  height="200px"
-                                  className="rounded-lg self-center w-full"
-                                  alt=""
-                                  onClick={(e) => getGameId(details._id)}
-                                />
+                                >
+                                  <img
+                                    src={
+                                      "https://web3games-api.kryptofam.com" +
+                                      "/public" +
+                                      details.thumbnail
+                                    }
+                                    height="200px"
+                                    className="rounded-lg self-center w-full"
+                                    alt=""
+                                    onClick={(e) => getGameId(details._id)}
+                                  />
+                                </NavLink>
+                              )}
 
-                                <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
-                                  {details.name}
-                                </span>
-                              </div>
+                              <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
+                                {details.name}
+                              </span>
                             </div>
                           </div>
-                        </NavLink>
+                        </div>
                       </div>
                     );
                   })
@@ -509,7 +548,7 @@ const Home = () => {
                   sorteddata.results.map((details, index) => {
                     console.log("sorted  list", details);
                     return (
-                      <div className="star-div m-2">
+                      <div className="star-div m-2" key={details.data._id}>
                         <NavLink
                           to={
                             "/game/" +
@@ -517,26 +556,63 @@ const Home = () => {
                             details.data.name.split(" ").join("_")
                           }
                         >
-                          <div className="bg-red-600 z-10 relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
+                          <div className="bg-red-600 z-10 relative flex text-white font-bold align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
+                            {/* <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
-                            <i className="fa fa-star text-white text-xs"></i>
-                            <i className="fa fa-star text-white text-xs"></i>
+                            <i className="fa fa-star text-white text-xs"></i> */}
+                            {details.data.type}
                           </div>
                           <div className="game-card z-0 rounded-xl">
                             <div className="flex flex-col -mt-3 xl:p-4 md:p-4 sm:p-4 p-2 w-full self-center text-center mx-auto">
                               <div>
-                                <img
-                                  src={
-                                    "https://web3games-api.kryptofam.com" + "/public" +
-                                    details.data.thumbnail
-                                  }
-                                  height="200px"
-                                  className="rounded-lg self-center w-full"
-                                  alt=""
-                                  onClick={(e) => getGameId(details.data._id)}
-                                />
+                                {details.data.type === "download" ? (
+                                  <>
+                                    <a
+                                      href={
+                                        "https://web3games-api.kryptofam.com" +
+                                        details.url
+                                      }
+                                    >
+                                      <img
+                                        src={
+                                          "https://web3games-api.kryptofam.com" +
+                                          "/public" +
+                                          details.data.thumbnail
+                                        }
+                                        height="200px"
+                                        className="rounded-lg self-center cursor-pointer"
+                                        alt=""
+                                        onClick={(e) =>
+                                          downloadFile(details.data.url, "File")
+                                        }
+                                      />
+                                    </a>
+                                  </>
+                                ) : (
+                                  <NavLink
+                                    to={
+                                      "/game/" +
+                                      "?" +
+                                      details?.data?.name?.split(" ").join("_")
+                                    }
+                                  >
+                                    <img
+                                      src={
+                                        "https://web3games-api.kryptofam.com" +
+                                        "/public" +
+                                        details.data.thumbnail
+                                      }
+                                      height="200px"
+                                      className="rounded-lg self-center w-full"
+                                      alt=""
+                                      onClick={(e) =>
+                                        getGameId(details.data._id)
+                                      }
+                                    />
+                                  </NavLink>
+                                )}
 
                                 <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                   {details.data.name}
@@ -608,7 +684,7 @@ const Home = () => {
                 favoritegames.map((details, index) => {
                   console.log("favorite game list", details);
                   return (
-                    <div className="star-div m-2">
+                    <div className="star-div m-2" key={details._id}>
                       <NavLink
                         to={"/game/" + "?" + details.name.split(" ").join("_")}
                       >
@@ -624,7 +700,8 @@ const Home = () => {
                             <div>
                               <img
                                 src={
-                                  "https://web3games-api.kryptofam.com" + "/public" +
+                                  "https://web3games-api.kryptofam.com" +
+                                  "/public" +
                                   details.thumbnail
                                 }
                                 height="200px"
