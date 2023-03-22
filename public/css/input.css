@@ -15,14 +15,25 @@ body {
    height:auto;
     overflow:scroll;
 }
-body.sidenav-bg {
+@media (min-width: 260px) and (max-width: 639px) {
+  div:has(div div.sidenav ul.ul-close){ 
+      bottom: 0;
+    left: 0;
+    position: fixed !important;
+    right: 0;
+    top: 0;
+    overflow: hidden !important; 
+  }
+  }
+
+/* body.sidenav-bg {
   bottom: 0;
   left: 0;
   position: fixed !important;
   right: 0;
   top: 0;
   overflow: hidden !important;
-}
+} */
 footer{
   margin-top: auto;
   /* position: absolute; */
@@ -36,6 +47,9 @@ footer{
 }
 .footer-content-align{
   justify-content: space-between;
+}
+body {
+  background: #fef2f2;
 }
 
 @media (min-width: 260px) and (max-width: 430px) {
