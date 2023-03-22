@@ -481,7 +481,14 @@ const Home = () => {
                   allGames.map((details, index) => {
                     console.log("game list", details);
                     return (
-                      <div className="star-div m-2 " key={details._id}>
+                  
+                      <div 
+                      className={`star-div m-2 +
+                      ${
+                        details.type === "download" ? "xl:hidden md:hidden sm:block block" : "xl:block md:block sm:hidden hidden"
+                       
+                      }`}
+                      key={details._id}>
                         <div className="bg-red-600 z-10 text-white font-bold relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
                           {/* <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
@@ -548,7 +555,13 @@ const Home = () => {
                   sorteddata.results.map((details, index) => {
                     console.log("sorted  list", details);
                     return (
-                      <div className="star-div m-2" key={details.data._id}>
+                      <div
+                      className={`star-div m-2 +
+                      ${
+                        details.data.type === "download" ? "xl:hidden md:hidden sm:block block" : "xl:block md:block sm:hidden hidden"
+                       
+                      }`}
+                       key={details.data._id}>
                         <NavLink
                           to={
                             "/game/" +
@@ -627,6 +640,7 @@ const Home = () => {
             </div>
             {/* </Carousel> */}
           </div>
+          
         </section>
 
         <section className="relative pt-6 px-2" id="favourites">
