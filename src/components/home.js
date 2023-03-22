@@ -481,14 +481,15 @@ const Home = () => {
                   allGames.map((details, index) => {
                     console.log("game list", details);
                     return (
-                  
-                      <div 
-                      className={`star-div m-2 +
+                      <div
+                        className={`star-div m-2 +
                       ${
-                        details.type === "download" ? "xl:hidden md:hidden sm:block block" : "xl:block md:block sm:hidden hidden"
-                       
+                        details.type === "download"
+                          ? "xl:hidden md:hidden sm:block block"
+                          : "xl:block md:block sm:hidden hidden"
                       }`}
-                      key={details._id}>
+                        key={details._id}
+                      >
                         <div className="bg-red-600 z-10 text-white font-bold relative flex align-middle py-1 rounded-xl xl:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 self-center justify-center mx-auto">
                           {/* <i className="fa fa-star text-white text-xs"></i>
                             <i className="fa fa-star text-white text-xs"></i>
@@ -556,12 +557,14 @@ const Home = () => {
                     console.log("sorted  list", details);
                     return (
                       <div
-                      className={`star-div m-2 +
+                        className={`star-div m-2 +
                       ${
-                        details.data.type === "download" ? "xl:hidden md:hidden sm:block block" : "xl:block md:block sm:hidden hidden"
-                       
+                        details.data.type === "download"
+                          ? "xl:hidden md:hidden sm:block block"
+                          : "xl:block md:block sm:hidden hidden"
                       }`}
-                       key={details.data._id}>
+                        key={details.data._id}
+                      >
                         <NavLink
                           to={
                             "/game/" +
@@ -640,10 +643,12 @@ const Home = () => {
             </div>
             {/* </Carousel> */}
           </div>
-          
         </section>
 
-        <section className="relative pt-6 px-2" id="favourites">
+        <section
+          className="relative pt-6 px-2 hidden sm:hidden md:hidden xl:block"
+          id="favourites"
+        >
           {/* lg:ml-40 md:ml-40 sm:ml-40  */}
           <div className=" flex flex-col">
             {/* mr-10 */}

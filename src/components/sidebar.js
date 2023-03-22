@@ -40,44 +40,47 @@ const Sidebar = () => {
   return (
     <div>
       {/* <div className="lg:w-32 md:w-32 sm:w-32 h-full z-40 absolute lg:fixed md:fixed sm:fixed"> */}
-        {/* h-20 lg:h-full md:h-full sm:h-full */}
-        {/* <div className="z-40 fixed h-full"> */}
-          {/* bg-red-600 relative pt-5 pb-5 shadow-2xl*/}
+      {/* h-20 lg:h-full md:h-full sm:h-full */}
+      {/* <div className="z-40 fixed h-full"> */}
+      {/* bg-red-600 relative pt-5 pb-5 shadow-2xl*/}
 
-          <div id="mySidenav" className="sidenav">
-            <div className="block text-3xl relative cursor-pointer md:hidden">
-              <button
-                className="flex flex-col float-left text-left left-0 -top-2 relative mx-2 md:mx-0 bar-icon"
-                // float-right right-8
-                onClick={(e) => mobileMenutoggle(e)}
-              ></button>
-            </div>
+      <div id="mySidenav" className="sidenav">
+        <div className="block text-3xl relative cursor-pointer md:hidden">
+          <button
+            className="flex flex-col float-left text-left left-0 -top-2 relative mx-2 md:mx-0 bar-icon"
+            // float-right right-8
+            onClick={(e) => mobileMenutoggle(e)}
+          ></button>
+        </div>
 
-            <ul
-              className=" flex flex-col
+        <ul
+          className=" flex flex-col
   sm:mt-20 mt-0 md:mt-20 xl:mt-20 sidenav-bg hidden fixed sm:flex md:flex xl:flex
    font-bold md:flex md:items-center 
   left-0 py-2  transition-all ease-in duration-500"
-            >
-              {/* absolute opacity-0 md:opacity-100 z-10 z-[1] md:z-auto */}
-              {/*  sidenav-bg bg-slate-800 sm:bg-slate-800 md:bg-slate-800 lg:bg-transparent */}
-              {/* relative md:static top-[-400px] */}
-
-              <li className="relative mb-5"  id="home">
-
-              <a   onClick={(e) => mobileMenutoggle(e)}
-         href="/home#games" 
-         className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
-         grow cursor-pointer transition duration-300 ease-in-out"
         >
-        <span className="text-sm  ml-2 self-center font-bold ">
-                    {" "}
-                    Home
-                  </span>
-                  <img src={home} height="25" width="25" className="" alt="" />
-        </a>
+          {/* absolute opacity-0 md:opacity-100 z-10 z-[1] md:z-auto */}
+          {/*  sidenav-bg bg-slate-800 sm:bg-slate-800 md:bg-slate-800 lg:bg-transparent */}
+          {/* relative md:static top-[-400px] */}
 
-                {/* <NavLink
+          <li
+            className="relative mb-5 hidden sm:hidden md:hidden lg:block xl:block"
+            id="home"
+          >
+            <a
+              onClick={(e) => mobileMenutoggle(e)}
+              href="/home#games"
+              className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
+         grow cursor-pointer transition duration-300 ease-in-out"
+            >
+              <span className="text-sm  ml-2 self-center font-bold ">
+                {" "}
+                Home
+              </span>
+              <img src={home} height="25" width="25" className="" alt="" />
+            </a>
+
+            {/* <NavLink
                   to="/home"
                   id="home"
                   onClick={(e) => mobileMenutoggle(e)}
@@ -90,24 +93,28 @@ const Sidebar = () => {
                   </span>{" "}
                   <img src={home} height="25" width="25" className="" alt="" />
                 </NavLink> */}
-              </li>
+          </li>
 
-              <li className="relative mb-5"  id="favourite">
-        <a   onClick={(e) => mobileMenutoggle(e)}
-         href="/home#favourites" 
-         className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
+          <li
+            className="relative mb-5 hidden sm:hidden md:hidden lg:block xl:block"
+            id="favourite"
+          >
+            <a
+              onClick={(e) => mobileMenutoggle(e)}
+              href="/home#favourites"
+              className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
          grow cursor-pointer transition duration-300 ease-in-out"
-                  //  className="hover:text-2xl active:text-2xl text-xl duration-500 xl:text-gray-200
-                  //  md:text-gray-200 sm:text-black text-black"
-                >
-                  <span className="text-sm  ml-2 self-center font-bold ">
-                    {" "}
-                    Favourite
-                  </span>
-                  <img src={star} height="25" width="25" className="" alt="" />
-                </a>
+              //  className="hover:text-2xl active:text-2xl text-xl duration-500 xl:text-gray-200
+              //  md:text-gray-200 sm:text-black text-black"
+            >
+              <span className="text-sm  ml-2 self-center font-bold ">
+                {" "}
+                Favourite
+              </span>
+              <img src={star} height="25" width="25" className="" alt="" />
+            </a>
 
-                {/* <NavLink
+            {/* <NavLink
                   //  onClick={homepage}
                   to="/favourite"
                   id="favourite"
@@ -121,9 +128,9 @@ const Sidebar = () => {
                   </span>{" "}
                   <img src={star} height="25" width="25" className="" alt="" />
                 </NavLink> */}
-              </li>
+          </li>
 
-              {/* <li className="relative mb-5">
+          {/* <li className="relative mb-5">
                 <NavLink
                   to="/settings"
                   id="settings"
@@ -145,33 +152,27 @@ const Sidebar = () => {
                 </NavLink>
               </li> */}
 
-              <li className="relative mb-5">
-                <NavLink
-                  id="logout"
-                  //  onClick={homepage}
-                  to="/"
-                  onClick={(e) => {
-                    mobileMenutoggle(e);
-                    clearSession();
-                  }}
-                  className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
+          <li className="relative mb-5">
+            <NavLink
+              id="logout"
+              //  onClick={homepage}
+              to="/"
+              onClick={(e) => {
+                mobileMenutoggle(e);
+                clearSession();
+              }}
+              className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
           grow cursor-pointer transition duration-300 ease-in-out"
-                >
-                  <span className="text-sm ml-2 self-center font-bold ">
-                    {" "}
-                    Logout
-                  </span>{" "}
-                  <img
-                    src={logout}
-                    height="25"
-                    width="25"
-                    className=""
-                    alt=""
-                  />
-                </NavLink>
-              </li>
+            >
+              <span className="text-sm ml-2 self-center font-bold ">
+                {" "}
+                Logout
+              </span>{" "}
+              <img src={logout} height="25" width="25" className="" alt="" />
+            </NavLink>
+          </li>
 
-              {/* <li className="relative mb-5">
+          {/* <li className="relative mb-5">
       <a id="favourite" className="py-1 justify-center flex justify-between overflow-hidden text-ellipsis whitespace-nowrap rounded 
        grow cursor-pointer transition duration-300 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">
       <span className="text-sm self-center font-bold "> Favourite</span>
@@ -193,10 +194,10 @@ const Sidebar = () => {
       <span className="text-sm self-center font-bold ">  Logout </span> <img src={logout} height="25" width="25" className="" alt="" />
       </a>
     </li> */}
-            </ul>
-            {/* </div> */}
-          </div>
-        {/* </div>
+        </ul>
+        {/* </div> */}
+      </div>
+      {/* </div>
       </div> */}
     </div>
   );
