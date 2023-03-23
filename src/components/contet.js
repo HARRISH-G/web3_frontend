@@ -121,6 +121,19 @@ const Content = () => {
         <span className="border-b-2 border-red-500">More Information</span>
         <i class="fa fa-angle-down text-xl font-semibold self-center align-middle text-red-500"></i>
       </div> */}
+
+      <div>
+        {info && info.type === "download" && (
+          <div>
+            <a href={"https://web3games-api.kryptofam.com" + info.url}>
+              {info && info?.name}
+              <span>
+                <i class="fa fa-download mx-2" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        )}
+      </div>
       <div className="flex self-end  float-right">
         <div
           style={{

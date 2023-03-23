@@ -25,7 +25,7 @@ const Game = () => {
   console.log("gameid", gameId);
 
   useEffect(() => {
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   const fetchgamedetails = async () => {
@@ -88,16 +88,30 @@ const Game = () => {
         {/* lg:ml-36 md:ml-36 sm:ml-36  */}
         <div className="unity-div">
           <div className="unity-container">
-            <Iframe
-              src={"https://web3games-api.kryptofam.com/" + gamedetails.url}
-              id=""
-              height="600px"
-              width="100%"
-              className="w-full flex"
-              allow="autoplay"
-              display="block"
-              position="relative"
-            />
+            {gamedetails && gamedetails.type === "online_play" ? (
+              <Iframe
+                src={"https://web3games-api.kryptofam.com/" + gamedetails.url}
+                id=""
+                height="600px"
+                width="100%"
+                className="w-full flex"
+                allow="autoplay"
+                display="block"
+                position="relative"
+              />
+            ) : (
+              <img
+                src={
+                  "https://web3games-api.kryptofam.com" +
+                  "/public" +
+                  gamedetails.thumbnail
+                }
+                height="200px"
+                className="rounded-lg self-center cursor-pointer"
+                alt=""
+              />
+            )}
+
             <Content />
           </div>
         </div>
