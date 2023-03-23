@@ -485,8 +485,8 @@ const Home = () => {
                         className={`star-div m-2 +
                       ${
                         details.type === "download"
-                          ? "xl:hidden md:hidden sm:block block"
-                          : "xl:block md:block sm:hidden hidden"
+                          ? "xl:hidden lg:hidden md:hidden sm:block block"
+                          : "xl:block lg:block md:block sm:hidden hidden"
                       }`}
                         key={details._id}
                       >
@@ -560,8 +560,8 @@ const Home = () => {
                         className={`star-div m-2 +
                       ${
                         details.data.type === "download"
-                          ? "xl:hidden md:hidden sm:block block"
-                          : "xl:block md:block sm:hidden hidden"
+                          ? "xl:hidden lg:hidden md:hidden sm:block block"
+                          : "xl:block lg:block md:block sm:hidden hidden"
                       }`}
                         key={details.data._id}
                       >
@@ -646,7 +646,7 @@ const Home = () => {
         </section>
 
         <section
-          className="relative pt-6 px-2 hidden sm:hidden md:hidden xl:block"
+          className="relative pt-6 px-2"
           id="favourites"
         >
           {/* lg:ml-40 md:ml-40 sm:ml-40  */}

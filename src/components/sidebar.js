@@ -64,7 +64,7 @@ const Sidebar = () => {
           {/* relative md:static top-[-400px] */}
 
           <li
-            className="relative mb-5 hidden sm:hidden md:hidden lg:block xl:block"
+            className="relative mb-5"
             id="home"
           >
             <a
@@ -96,7 +96,7 @@ const Sidebar = () => {
           </li>
 
           <li
-            className="relative mb-5 hidden sm:hidden md:hidden lg:block xl:block"
+            className="relative mb-5"
             id="favourite"
           >
             <a
