@@ -8,12 +8,12 @@ import Login from "../login";
 import Signup from "../signup";
 import Settings from "../settings";
 import Favourite from "../favourite";
-import { ValidateToken } from "../tokenvalidator/TokenValidate";
+// import { ValidateToken } from "../tokenvalidator/TokenValidate";
 import SidebarLayout from "../sidebarlayout";
 import { useSelector, useDispatch } from "react-redux";
 import UserSignOut from "../../actions/UserSignout";
 // import Frontend from "./layouts/Frontend";
-
+import axios from "axios";
 const AppRoutes = () => {
   // let token = window.sessionStorage.getItem("token");
   let userdata = useSelector((state) => {
@@ -23,7 +23,7 @@ const AppRoutes = () => {
   let navigate = useNavigate();
   let dispatch = useDispatch();
   console.log("token", userdata.token);
-
+  let token = sessionStorage.getItem("token");
   const clearSession = async () => {
     console.log("clear sessions");
     sessionStorage.setItem("token", "");
@@ -31,32 +31,42 @@ const AppRoutes = () => {
     dispatch(UserSignOut());
   };
 
-  useEffect(() => {
-    const load = async () => {
-      if (userdata.token) {
-        let isvalidtoken = await ValidateToken();
-        console.log("isvalidtoken", isvalidtoken);
-        if (!isvalidtoken) {
-          console.log("Session Expired, Signingout");
+  const ValidateToken = async () => {
+    if (token) {
+      let isvalidtoken = await axios({
+        method: "get",
+        url: "https://booboo-login.kryptofam.com/users/token_validity",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("isvalidtoken", isvalidtoken);
+      if (isvalidtoken?.data?.data?.is_valid) {
+        console.log("token valid");
+      } else {
+        console.log("Session Expired, Signingout");
 
-          console.log("Token notValid");
-          clearSession();
-        } else {
-          console.log("token valid");
-        }
+        console.log("Token notValid");
+        clearSession();
       }
-      load();
-    };
+    }
+  };
 
+  useEffect(() => {
+    ValidateToken();
     return () => {};
-  }, [userdata.token]);
+  }, [token]);
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        {!(userdata.token === "" || ValidateToken() === false) ? (
+        {!(
+          userdata.token === "" ||
+          userdata.token === undefined ||
+          ValidateToken() === false
+        ) ? (
           <Route element={<SidebarLayout />}>
             <Route path="/home" element={<Home />}></Route>
             <Route path="/settings" element={<Settings />}></Route>
