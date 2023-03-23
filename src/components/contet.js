@@ -124,7 +124,7 @@ const Content = () => {
 
       <div className="flex justify-between px-2 sm:px-10 md:px-0 xl:px-0 sm:justify-between md:justify-between xl:justify-between">
        <div className="justify-start flex">
-        {info && info.type === "download" && (
+        {info && info.type === "download" ? (
           <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
             <a className="text-md font-semibold" href={"https://web3games-api.kryptofam.com" + info.url}>
               {info && info?.name}
@@ -133,7 +133,13 @@ const Content = () => {
               </span>
             </a>
           </div>
-        )}
+        ):
+        ( 
+        <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
+        <div className="text-md font-semibold">
+          {info && info?.name}
+        </div>
+      </div>)}
         </div>
 
 <div className="flex self-end  float-rightsm:justify-end justify-end md:justify-end lg:justify-end xl:justify-end">
