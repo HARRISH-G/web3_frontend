@@ -6,9 +6,9 @@ import Sidebar from "./sidebar";
 const SidebarLayout = () => {
 return (
 
-<div className="" id="page-container">
+<div className="relative" id="page-container">
 <Sidebar />
-<div className="z-0">
+<div className="z-0 relative">
 <Outlet />
 </div>
 <Footer/>
