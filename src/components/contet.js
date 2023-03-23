@@ -122,7 +122,7 @@ const Content = () => {
         <i class="fa fa-angle-down text-xl font-semibold self-center align-middle text-red-500"></i>
       </div> */}
 
-      <div className="flex justify-between sm:justify-between md:justify-between xl:justify-between">
+      <div className="flex justify-between px-2 sm:px-10 md:px-0 xl:px-0 sm:justify-between md:justify-between xl:justify-between">
        <div className="justify-start flex">
         {info && info.type === "download" && (
           <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
