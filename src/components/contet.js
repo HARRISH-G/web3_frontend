@@ -122,10 +122,11 @@ const Content = () => {
         <i class="fa fa-angle-down text-xl font-semibold self-center align-middle text-red-500"></i>
       </div> */}
 
-      <div>
+      <div className="flex justify-between sm:justify-between md:justify-between xl:justify-between">
+       <div className="justify-start flex">
         {info && info.type === "download" && (
-          <div>
-            <a href={"https://web3games-api.kryptofam.com" + info.url}>
+          <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
+            <a className="text-md font-semibold" href={"https://web3games-api.kryptofam.com" + info.url}>
               {info && info?.name}
               <span>
                 <i class="fa fa-download mx-2" aria-hidden="true"></i>
@@ -133,8 +134,9 @@ const Content = () => {
             </a>
           </div>
         )}
-      </div>
-      <div className="flex self-end  float-right">
+        </div>
+
+<div className="flex self-end  float-rightsm:justify-end justify-end md:justify-end lg:justify-end xl:justify-end">
         <div
           style={{
             margin: "auto",
@@ -156,20 +158,21 @@ const Content = () => {
           />
         </div>
       </div>
-      <div>
+      </div>
+     
+      {/* <div>
         <Accordion
           id="first"
           title="More Information"
           className="flex float-left text-left flex-col accordion-image first"
         >
-          {/* onClick={getclick}  */}
-
           <div className="body-height flex h-auto close-accordion">
             <div className="flex h-auto">{info.description}</div>
-            {/* <div> gfhsdg hfjsg fsjhg fjhdsg</div> */}
           </div>
         </Accordion>
-      </div>
+      </div> */}
+
+       {/* onClick={getclick}  */}
       <div className="flex flex-row self-center text-center py-5 align">
         <input
           type="text"

@@ -63,8 +63,8 @@ const Game = () => {
 
             <div className="flex xl:w-32 md:w-40 sm:w-32 w-32 flex-row header-search rounded-lg float-right bg-red-200">
               <div className="flex flex-col self-center ml-2">
-                <span className="text-xs text-slate-500">Welcome</span>
-                <span className="text-sm text-slate-500">
+                <span className="text-xs font-semibold text-slate-500">Welcome</span>
+                <span className="text-sm font-semibold text-slate-500">
                   {userdata.username}
                 </span>
               </div>
@@ -106,8 +106,8 @@ const Game = () => {
                   "/public" +
                   gamedetails.thumbnail
                 }
-                height="200px"
-                className="rounded-lg self-center cursor-pointer"
+                // height="200px"
+                className="mx-auto w-3/5 h-2/5 sm:mx-auto md:mx-0 lg:mx-0 xl:mx-0 rounded-lg self-center cursor-pointer"
                 alt=""
               />
             )}

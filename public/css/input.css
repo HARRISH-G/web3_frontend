@@ -95,7 +95,34 @@ body {
   width: 190px;
 }
   }
+.download-link a:visited
+{
+  color:#dc2626;
 
+}
+
+.download-link a:focus {
+color:#0926d4;;
+}
+
+.download-link a:hover {
+color:#0926d4;;
+border-bottom:1px solid #0926d4;;
+}
+
+.download-link a:active {
+  color:#0926d4;;
+  border-bottom: 1px solid #0926d4;;
+
+}
+/* Add to Favourite formcontrol label  */
+.MuiTypography-body1 {
+  font-size: 0.9rem !important;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 600 !important;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
 .react-multi-carousel-item {
   transform-style: preserve-3d;
   backface-visibility: hidden;
