@@ -32,26 +32,31 @@ const AppRoutes = () => {
   // };
 
   const ValidateToken = async () => {
-    if (token) {
-      let isvalidtoken = await axios({
-        method: "get",
-        url: "https://booboo-login.kryptofam.com/users/token_validity",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      console.log("isvalidtoken", isvalidtoken);
-      if (isvalidtoken?.data?.data?.is_valid) {
-        console.log("token valid");
-        return true;
-      } else {
-        console.log("Session Expired, Signingout");
+    try {
+      if (token) {
+        let isvalidtoken = await axios({
+          method: "get",
+          url: "https://booboo-login.kryptofam.com/users/token_validity",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log("isvalidtoken", isvalidtoken);
+        if (isvalidtoken?.data?.data?.is_valid) {
+          console.log("token valid");
+          return true;
+        } else {
+          console.log("Session Expired, Signingout");
 
-        console.log("Token notValid");
-        dispatch(UserSignOut());
-        navigate("/login");
-        return false;
+          console.log("Token notValid");
+          dispatch(UserSignOut());
+          navigate("/login");
+          return false;
+        }
       }
+    } catch (error) {
+      dispatch(UserSignOut());
+      navigate("/login");
     }
   };
 
