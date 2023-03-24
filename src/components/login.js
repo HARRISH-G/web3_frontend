@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import logo from "../images/login-logo.png";
 import bbgamelogin from "../../src/images/bbgamelogin.png";
@@ -13,16 +13,13 @@ import Signin, { UsersignIn } from "../actions/Signin";
 import { useGoogleLogin } from "@react-oauth/google";
 import { googleAuth } from "../actions/googlelAuth";
 import bblogo from "../images/bbfulllogo.png";
+import UserSignOut from "../actions/UserSignout";
 const Login = () => {
   const [showconfirm, setshowconfirm] = useState(false);
   const [details, setdetails] = useState({});
   const [errMsg, seterrMsg] = useState("");
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  sessionStorage.clear();
-  sessionStorage.setItem("token", "");
-  sessionStorage.setItem("username", "");
-  sessionStorage.setItem("email", "");
 
   const handleChange = (evt) => {
     const value = evt.target.value;
@@ -99,6 +96,15 @@ const Login = () => {
     return;
   };
 
+  useEffect(() => {
+    sessionStorage.clear();
+    sessionStorage.setItem("token", "");
+    sessionStorage.setItem("username", "");
+    sessionStorage.setItem("email", "");
+    dispatch(UserSignOut());
+    return () => {};
+  }, []);
+
   return (
     <div
       className="fix-height relative"
@@ -159,7 +165,7 @@ const Login = () => {
 
               <label className="block w-full mb-5 self-center">
                 <input
-                type={showconfirm ? "text" : "password"}
+                  type={showconfirm ? "text" : "password"}
                   name="password"
                   onChange={(e) => {
                     handleChange(e);
@@ -169,10 +175,16 @@ const Login = () => {
                   placeholder="Password"
                 />
                 {showconfirm ? (
-                <i className="fa fa-eye float-right relative -mt-6 mr-2 z-10 cursor-pointer"  onClick={(e) => setshowconfirm(false)}></i>
-              ) : (
-                <i className="fa fa-eye-slash float-right relative -mt-6 z-10 mr-2 cursor-pointer"  onClick={(e) => setshowconfirm(true)}></i>
-              )}
+                  <i
+                    className="fa fa-eye float-right relative -mt-6 mr-2 z-10 cursor-pointer"
+                    onClick={(e) => setshowconfirm(false)}
+                  ></i>
+                ) : (
+                  <i
+                    className="fa fa-eye-slash float-right relative -mt-6 z-10 mr-2 cursor-pointer"
+                    onClick={(e) => setshowconfirm(true)}
+                  ></i>
+                )}
               </label>
               <div className="text-md flex text-right justify-end self-end font-semibold float-right">
                 Forgot Password?
