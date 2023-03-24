@@ -5,13 +5,11 @@ import Sidebar from "./sidebar";
 
 const SidebarLayout = () => {
   return (
-    <div className="relative height-full">
+    <div id="page-container">
       <Sidebar />
-      {/* <div className=""> */}
-      {/* z-0 l */}
-     
+      <div className="z-0">
         <Outlet />
-      {/* </div> */}
+        </div>
       <Footer />
     </div>
   );

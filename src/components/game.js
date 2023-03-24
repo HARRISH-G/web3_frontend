@@ -52,7 +52,7 @@ const Game = () => {
     fetchgamedetails();
   }, []);
   return (
-    <div className="lg:ml-32 xl:py-4 md:py-2 sm:py-2 py-2 md:ml-32 sm:ml-32">
+    <div className="lg:ml-32 xl:py-4 md:py-2 sm:py-2 py-2 md:ml-32 sm:ml-32 min-height-100">
       <div className=" relative md:flex flex-col md:items-left md:justify-between px-10">
         {/* container */}
         <div className="lg:w-full text-left mt-5 sm:mt-5 md:mt-5 xl:mt-0">
