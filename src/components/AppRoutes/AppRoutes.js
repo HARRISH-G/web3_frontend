@@ -24,12 +24,12 @@ const AppRoutes = () => {
   let dispatch = useDispatch();
   console.log("token", userdata.token);
   let token = sessionStorage.getItem("token");
-  const clearSession = async () => {
-    console.log("clear sessions");
-    sessionStorage.setItem("token", "");
-    navigate("/login");
-    dispatch(UserSignOut());
-  };
+  // const clearSession = async () => {
+  //   console.log("clear sessions");
+  //   sessionStorage.setItem("token", "");
+
+  //   dispatch(UserSignOut());
+  // };
 
   const ValidateToken = async () => {
     if (token) {
@@ -48,7 +48,8 @@ const AppRoutes = () => {
         console.log("Session Expired, Signingout");
 
         console.log("Token notValid");
-        clearSession();
+        dispatch(UserSignOut());
+        navigate("/login");
         return false;
       }
     }

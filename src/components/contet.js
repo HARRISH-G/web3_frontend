@@ -36,22 +36,24 @@ const Content = () => {
   let token = sessionStorage.getItem("token");
 
   const savecomment = async () => {
-    setcomment("");
     try {
       console.log(comment);
       let data = {
         comment: comment,
+        game_id: gameId,
       };
       await axios({
         method: "post",
-        url: `https://web3games-api.kryptofam.com/add_comments?id=${gameId}`,
+        url: "https://web3games-api.kryptofam.com/games/add_comments",
         headers: {
           Authorization: `Bearer ${userdata.token}`,
         },
         data: data,
       }).then((res) => {
+        setcomment("");
+
         console.log("comment added", res);
-        if (res?.data?.code === 200) {
+        if (res?.data?.code === "success") {
           setgamecomments(res?.data?.data?.comments);
         }
       });
@@ -123,49 +125,52 @@ const Content = () => {
       </div> */}
 
       <div className="flex justify-between px-2 sm:px-10 md:px-0 xl:px-0 sm:justify-between md:justify-between xl:justify-between">
-       <div className="justify-start flex">
-        {info && info.type === "download" ? (
-          <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
-            <a className="text-md font-semibold" href={"https://web3games-api.kryptofam.com" + info.url}>
-              {info && info?.name}
-              <span>
-                <i class="fa fa-download mx-2" aria-hidden="true"></i>
-              </span>
-            </a>
-          </div>
-        ):
-        ( 
-        <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
-        <div className="text-md font-semibold">
-          {info && info?.name}
-        </div>
-      </div>)}
+        <div className="justify-start flex">
+          {info && info.type === "download" ? (
+            <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
+              <a
+                className="text-md font-semibold"
+                href={"https://web3games-api.kryptofam.com" + info.url}
+              >
+                {info && info?.name}
+                <span>
+                  <i class="fa fa-download mx-2" aria-hidden="true"></i>
+                </span>
+              </a>
+            </div>
+          ) : (
+            <div className="self-center justify-start sm:justify-start flex flex-col align-middle download-link">
+              <div className="text-md font-semibold">{info && info?.name}</div>
+            </div>
+          )}
         </div>
 
-<div className="flex self-end  float-rightsm:justify-end justify-end md:justify-end lg:justify-end xl:justify-end">
-        <div
-          style={{
-            margin: "auto",
-            display: "block",
-            width: "fit-content",
-          }}
-        >
-          <FormControlLabel
-            control={
-              <Checkbox
-                icon={<FavoriteBorder />}
-                checkedIcon={<Favorite />}
-                onChange={handleChange}
-                checked={info.isFavorite === true ? true : false}
-                name="checkedH"
-              />
-            }
-            label={info.isFavorite === true ? "Favourite" : "Add To Favourite"}
-          />
+        <div className="flex self-end  float-rightsm:justify-end justify-end md:justify-end lg:justify-end xl:justify-end">
+          <div
+            style={{
+              margin: "auto",
+              display: "block",
+              width: "fit-content",
+            }}
+          >
+            <FormControlLabel
+              control={
+                <Checkbox
+                  icon={<FavoriteBorder />}
+                  checkedIcon={<Favorite />}
+                  onChange={handleChange}
+                  checked={info.isFavorite === true ? true : false}
+                  name="checkedH"
+                />
+              }
+              label={
+                info.isFavorite === true ? "Favourite" : "Add To Favourite"
+              }
+            />
+          </div>
         </div>
       </div>
-      </div>
-     
+
       {/* <div>
         <Accordion
           id="first"
@@ -178,7 +183,7 @@ const Content = () => {
         </Accordion>
       </div> */}
 
-       {/* onClick={getclick}  */}
+      {/* onClick={getclick}  */}
       <div className="flex flex-row self-center text-center py-5 align">
         <input
           type="text"
@@ -225,7 +230,7 @@ const Content = () => {
                     {comment.username}
                   </span>
                 </div>
-                <div>{comment.text}</div>
+                <div>{comment.comment}</div>
               </div>
             );
           })}
