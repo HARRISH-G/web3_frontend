@@ -43,11 +43,13 @@ const AppRoutes = () => {
       console.log("isvalidtoken", isvalidtoken);
       if (isvalidtoken?.data?.data?.is_valid) {
         console.log("token valid");
+        return true;
       } else {
         console.log("Session Expired, Signingout");
 
         console.log("Token notValid");
         clearSession();
+        return false;
       }
     }
   };
@@ -55,13 +57,14 @@ const AppRoutes = () => {
   useEffect(() => {
     ValidateToken();
     return () => {};
-  }, [token]);
+  }, []);
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="*" element={<Login />}></Route>
         {!(
           userdata.token === "" ||
           userdata.token === undefined ||
@@ -74,9 +77,7 @@ const AppRoutes = () => {
             <Route path="/game/" element={<Game />}></Route>
           </Route>
         ) : (
-          <>
-            <Route path="/login" element={<Login />}></Route>
-          </>
+          <Route path="/login" element={<Login />}></Route>
         )}
       </Routes>
     </div>
