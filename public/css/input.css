@@ -1,25 +1,34 @@
 html, body {
-  height: 100vh !important;
+  /* height: 100vh !important; */
 }
 
 .fix-height {
   height: 100vh !important;
 }
-#root{
-  height:100%;
-}
+/* #root{
+  height:100% !important;
+} */
 .height-full{
   height:100%
 }
 
+.min-height-100{
+  min-height:100vh !important
+}
 body {
   background: #fef2f2;
   /* min-height: 100vh; */
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
    /* min-height: 100%; */
-   height:auto;
+   /* height:auto; */
     overflow:scroll;
+    margin: 0;
+    line-height: inherit;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    bottom:0;
 }
 @media (min-width: 260px) and (max-width: 639px) {
   div:has(div div.sidenav ul.ul-close){ 
@@ -54,10 +63,7 @@ footer{
 .footer-content-align{
   justify-content: space-between;
 }
-body {
-  background: #fef2f2;
-  height:100vh !important;
-}
+
 
 @media (min-width: 260px) and (max-width: 430px) {
   .game-card {

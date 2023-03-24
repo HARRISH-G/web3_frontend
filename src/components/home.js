@@ -225,7 +225,7 @@ const Home = () => {
   }, []);
 
   return (
-    // <div className="">
+    <div className="min-height-100">
       <div className="pb-20 lg:ml-32 md:ml-32 sm:ml-32">
         {/* lg:ml-32 md:ml-32 sm:ml-32  */}
         {/* <li className="relative mb-5">
@@ -838,8 +838,8 @@ const Home = () => {
 
         {/* <Game/> */}
       </div>
-      // {/* <Footer/> */}
-    // </div>
+      {/* <Footer/> */}
+    </div>
   );
 };
 

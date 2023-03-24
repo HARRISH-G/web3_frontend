@@ -44,7 +44,7 @@ const Sidebar = () => {
       {/* <div className="z-40 fixed h-full"> */}
       {/* bg-red-600 relative pt-5 pb-5 shadow-2xl*/}
 
-      <div id="mySidenav" className="sidenav">
+      <div id="mySidenav" className="sidenav fixed">
         <div className="block text-3xl relative cursor-pointer md:hidden">
           <button
             className="flex flex-col float-left text-left left-0 -top-2 relative mx-2 md:mx-0 bar-icon"
