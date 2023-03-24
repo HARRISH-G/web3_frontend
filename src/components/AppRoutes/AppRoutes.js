@@ -57,7 +57,7 @@ const AppRoutes = () => {
   useEffect(() => {
     ValidateToken();
     return () => {};
-  }, [token]);
+  }, []);
 
   return (
     <div className="App">
