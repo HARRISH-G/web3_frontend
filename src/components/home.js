@@ -225,8 +225,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <div className="pb-20 h-full lg:ml-32 md:ml-32 sm:ml-32">
+    // <div className="">
+      <div className="pb-20 lg:ml-32 md:ml-32 sm:ml-32">
         {/* lg:ml-32 md:ml-32 sm:ml-32  */}
         {/* <li className="relative mb-5">
       <a className="py-1 justify-center flex items-center overflow-hidden text-ellipsis whitespace-nowrap rounded grow cursor-pointer transition duration-300 ease-in-out" href="#!" data-mdb-ripple="true" data-mdb-ripple-color="dark">
@@ -838,8 +838,8 @@ const Home = () => {
 
         {/* <Game/> */}
       </div>
-      {/* <Footer/> */}
-    </div>
+      // {/* <Footer/> */}
+    // </div>
   );
 };
 
