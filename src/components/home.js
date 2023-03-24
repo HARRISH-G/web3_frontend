@@ -521,7 +521,7 @@ const Home = () => {
                                 />
                               </NavLink>
 
-                              <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
+                              <span className="text-truncate xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                 {details.name}
                               </span>
                             </div>
@@ -574,7 +574,7 @@ const Home = () => {
                                 />
                               </NavLink>
 
-                              <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
+                              <span className="text-truncate xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                 {details.data.name}
                               </span>
                             </div>
@@ -638,7 +638,7 @@ const Home = () => {
                                 onClick={(e) => getGameId(details.game_id)}
                               />
 
-                              <span className="xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
+                              <span className="text-truncate xl:text-sm md:text-sm sm:text-sm text-xs text-white font-semibold uppercase float-left justify-start  text-left">
                                 {details.name}
                               </span>
                             </NavLink>
