@@ -64,7 +64,12 @@ footer{
   justify-content: space-between;
 }
 
-
+.text-truncate{
+  text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 160px;
+}
 @media (min-width: 260px) and (max-width: 430px) {
   .game-card {
     background: #ff9191;
