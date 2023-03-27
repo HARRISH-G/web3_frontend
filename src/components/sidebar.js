@@ -19,17 +19,17 @@ const Sidebar = () => {
     let list = document.querySelector("button");
     list.classList.toggle("close-icon");
   };
-  const showMenu = () => {
-    var element = document.getElementById("show-menu");
-    element.classList.toggle("hidden");
-    document.getElementById("show-menu").style.display = "block";
-  };
-  const closeMenu = () => {
-    var element = document.getElementById("show-menu");
-    element.classList.toggle("hidden");
+  // const showMenu = () => {
+  //   var element = document.getElementById("show-menu");
+  //   element.classList.toggle("hidden");
+  //   document.getElementById("show-menu").style.display = "block";
+  // };
+  // const closeMenu = () => {
+  //   var element = document.getElementById("show-menu");
+  //   element.classList.toggle("hidden");
 
-    document.getElementById("show-menu").style.display = "none";
-  };
+  //   document.getElementById("show-menu").style.display = "none";
+  // };
 
   const clearSession = async () => {
     console.log("clear sessions");
