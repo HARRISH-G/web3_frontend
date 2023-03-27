@@ -61,7 +61,6 @@ const Login = () => {
 
   const googlelogin = useGoogleLogin({
     onSuccess: (tokenResponse) => {
-      console.log(tokenResponse.access_token);
       getUserGoogleProfile(tokenResponse.access_token);
     },
   });
