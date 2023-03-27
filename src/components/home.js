@@ -347,10 +347,10 @@ const Home = () => {
                       placeholder="Search Games"
                     />
                   </div>
-                  <div className="flex xl:w-32 md:w-40 sm:w-32 w-32 flex-row header-search rounded-lg float-right bg-red-200">
+                  <div className="flex justify-between xl:w-32 md:w-40 sm:w-32 w-32 flex-row header-search rounded-lg float-right bg-red-200">
                     <div className="flex flex-col self-center ml-2">
                       <span className="text-xs font-semibold text-slate-500">Welcome</span>
-                      <span className="text-sm font-semibold text-slate-500">
+                      <span className="user-name-truncate text-sm font-semibold text-slate-500">
                         {userdata.username}
                       </span>
                     </div>
